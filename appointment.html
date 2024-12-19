@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthCare+ | Appointment</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: white;
+        }
+
+        .logo:hover {
+            color: #ffcc00;
+            transition: color 0.3s ease;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #ffcc00;
+            color: #007BFF;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Main Content */
+        .appointment-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .appointment-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #333;
+            font-weight: 700;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        label {
+            font-size: 1.1rem;
+            color: #555;
+            font-weight: 500;
+        }
+
+        input, select, textarea {
+            padding: 12px 18px;
+            font-size: 1.1rem;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #007BFF;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        button {
+            padding: 14px;
+            font-size: 1.2rem;
+            color: #fff;
+            background: #007BFF;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        /* Footer Section */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #333;
+            color: white;
+            margin-top: 40px;
+            font-size: 1rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Date Picker */
+        input[type="date"] {
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .logo {
+                font-size: 1.6rem;
+                margin-bottom: 10px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .appointment-container {
+                width: 90%;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1 class="logo">HealthCare+</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="doctors.html">Doctors</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="appointment.html">Appointment</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Appointment Form -->
+    <div class="appointment-container">
+        <h1>Book an Appointment</h1>
+        <form id="appointment-form" action="#" method="POST">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+
+            <label for="date">Preferred Appointment Date</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="doctor">Select Doctor</label>
+            <select id="doctor" name="doctor" required>
+                <option value="" disabled selected>Select a Doctor</option>
+                <option value="doctor1">Dr. Mayank Tyagi</option>
+                <option value="doctor2">Dr. Rajesh Khanna</option>
+                <option value="doctor3">Dr. Suryanshi Singh</option>
+            </select>
+
+            <label for="message">Additional Message</label>
+            <textarea id="message" name="message" placeholder="Any special requests or details..." rows="4"></textarea>
+
+            <button type="submit">Book Appointment</button>
+        </form>
+
+        <div id="reminder-message" style="display: none; padding: 15px; background-color: #28a745; color: white; margin-top: 20px; border-radius: 8px;">
+            Your appointment reminder has been set successfully!
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 HealthCare+. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Reminder system setup
+        document.getElementById('appointment-form').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent form from submitting
+
+            const appointmentDate = new Date(document.getElementById('date').value);  // Get the date input
+            const currentDate = new Date();
+
+            if (appointmentDate > currentDate) {
+                // Set reminder time (1 hour before appointment)
+                const reminderTime = appointmentDate.getTime() - 60 * 60 * 1000; // 1 hour before
+
+                // Save reminder in localStorage
+                localStorage.setItem('appointmentReminder', reminderTime);
+
+                // Display reminder success message
+                document.getElementById('reminder-message').style.display = 'block';
+
+                // Check if it's time to send the reminder
+                checkReminder();
+            } else {
+                alert('Please select a future date for the appointment!');
+            }
+        });
+
+        // Function to check if reminder time has passed
+        function checkReminder() {
+            const reminderTime = localStorage.getItem('appointmentReminder');
+            if (reminderTime) {
+                const currentTime = new Date().getTime();
+
+                if (currentTime >= reminderTime) {
+                    alert('Reminder: Your appointment is in an hour!');
+                    localStorage.removeItem('appointmentReminder');  // Clear reminder after showing it
+                }
+            }
+        }
+
+        // Check for reminders when the page is loaded
+        window.onload = checkReminder;
+    </script>
+
+</body>
+</html>

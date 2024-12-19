@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthCare+ | Our Services</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            background-color: #f8f4f4;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1E90FF, #1c1b1b);
+            color: rgb(19, 19, 19);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(13, 13, 13, 0.1);
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-size: 1.1rem;
+            color: rgb(232, 216, 216);
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #5645f7;
+            transform: translateY(-3px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('backdoc.avif') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            box-shadow: inset 0 0 100px rgba(190, 189, 189, 0.5);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.6);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 2rem;
+            background-color: #fff;
+            text-align: center;
+            box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .services h2 {
+            font-size: 3rem;
+            color: #1E90FF;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            background: linear-gradient(135deg, #eef4f9, #add8e6);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card h3 {
+            font-size: 2rem;
+            color: #1E90FF;
+            margin-bottom: 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .service-card p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .service-card a {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #1E90FF;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .service-card a:hover {
+            color: #090de0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: rgb(22, 21, 21);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 50px;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .service-card {
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .service-card {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1 class="logo">HealthCare+</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="doctors.html">Doctors</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="appointment.html">Appointment</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div>
+            <h1>Our Services</h1>
+            <p>Explore the range of high-quality healthcare services we offer to ensure your well-being.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <h2>Our Expertise</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>General Consultation</h3>
+                <p>Our general consultations are designed to provide you with a comprehensive health checkup and guidance on maintaining your well-being.</p>
+                <a href="https://www.nanavatimaxhospital.org/blogs/importance-of-regular-health-check-ups">Learn More</a>
+            </div>
+            <div class="service-card">
+                <h3>Emergency Care</h3>
+                <p>Our emergency care service is available 24/7, ensuring immediate attention for critical and life-threatening conditions.</p>
+                <a href="https://support.google.com/android/answer/9319337?hl=en">Learn More</a>
+            </div>
+            <div class="service-card">
+                <h3>Specialist Treatments</h3>
+                <p>Our specialists provide expert care in a wide range of fields including cardiology, orthopedics, and more.</p>
+                <a href="https://support.google.com/android/answer/9319337?hl=en">Learn More</a>
+            </div>
+            <div class="service-card">
+                <h3>Diagnostics & Tests</h3>
+                <p>We offer state-of-the-art diagnostic tests and screenings to catch health issues early and provide precise treatment plans.</p>
+                <a href="https://support.google.com/android/answer/9319337?hl=en">Learn More</a>
+            </div>
+            <div class="service-card">
+                <h3>Preventive Care</h3>
+                <p>Our preventive care services focus on keeping you healthy by offering vaccines, screenings, and health assessments.</p>
+                <a href="https://support.google.com/android/answer/9319337?hl=en">Learn More</a>
+            </div>
+            <div class="service-card">
+                <h3>Rehabilitation</h3>
+                <p>We provide rehabilitation services to help patients recover from surgeries or injuries and regain their quality of life.</p>
+                <a href="https://support.google.com/android/answer/9319337?hl=en">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 HealthCare+. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
