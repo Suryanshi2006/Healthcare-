@@ -15,7 +15,6 @@ Welcome to **HealthCare+**, a responsive healthcare website where users can find
 4. [Usage](#usage)
 5. [Technologies Used](#technologies-used)
 6. [Folder Structure](#folder-structure)
-7. [Credits](#credits)
 
 ## Introduction
 
